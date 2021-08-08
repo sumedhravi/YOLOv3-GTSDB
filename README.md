@@ -9,9 +9,9 @@ Training a YOLOv3 model on the GTSDB dataset to detect and locate traffic signs 
 * YOLO v3 weights trained using the notebook
 
 ## How to Use
-The notebook can be trained on a local machine, if you possess a GPU, as well as a Kaggle or Google Colab Kernel.
+The notebook can be trained on a local machine, if you have access to a GPU, as well as a Kaggle or Google Colab Kernel.
 
-* You can either clone this repository in your working directory and execute the notebook or if you're working on Google Colab you can clone the repository or download the dataset and upload it to your google drive. This saves you from downloading the dataset files again when the runtime is terminated.
+* You can either clone this repository in your working directory or execute this notebook on Google Colab. Remember to enable GPU on Colab.
 * Define the values of these flags based on the operations you would like to perform.
 ```
 # Flags 
@@ -42,6 +42,7 @@ if not os.path.exists(home_dir + '/darknet/obj43.data'):
 weights_4 = repo_folder + '/yolov3_custom_train_v2_best.weights'
 weights_43 = repo_folder + '/yolov3_custom_train_v1_best.weights'
 ```
+* Now all you have to do is run the notebook.
 
 ## Predictions
 To detect traffic signs in images execute this block of code.
@@ -58,4 +59,4 @@ The model is based on the repository by [AlexeyAB](https://github.com/AlexeyAB/d
 
 [Tutorial on training YOLOv3 model on Google Colab by the AI Guy](https://colab.research.google.com/drive/1Mh2HP_Mfxoao6qNFbhfV3u28tG8jAVGk#scrollTo=k5SYWDPv7qG-)
 
-[https://blog.goodaudience.com/part-1-preparing-data-before-training-yolo-v2-and-v3-deepfashion-dataset-3122cd7dd884]
+https://blog.goodaudience.com/part-1-preparing-data-before-training-yolo-v2-and-v3-deepfashion-dataset-3122cd7dd884
