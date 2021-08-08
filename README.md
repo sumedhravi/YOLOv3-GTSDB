@@ -11,8 +11,10 @@ Training a YOLOv3 model on the GTSDB dataset to detect and locate traffic signs 
 ## How to Use
 The notebook can be trained on a local machine, if you have access to a GPU, as well as a Kaggle or Google Colab Kernel.
 
-* You can either clone this repository in your working directory or execute this notebook on Google Colab. Remember to enable GPU on Colab.
+* You can either clone this repository or download the files to your own machine or execute this notebook on Google Colab. Remember to enable GPU on Colab.
+* Download the dataset from [here](https://sid.erda.dk/public/archives/ff17dc924eba88d5d01a807357d6614c/FullIJCNN2013.zip)
 * Define the values of these flags based on the operations you would like to perform.
+* Execute each cell in the same order as in the notebook.
 ```
 # Flags 
 train_individual_classes = False # To train for 43 classes instead of the 4 main parent classes
@@ -30,19 +32,11 @@ If you would like to train the model from scratch using the pretrained weights f
 backup = /content/drive/MyDrive/yolov3/backup
 ```
 
-### Note: Do the above process *before* executing this chunk of code
-```
-if not os.path.exists(home_dir + '/darknet/obj.data'):
-    shutil.copyfile(repo_folder + '/darknet/obj.data', home_dir + '/darknet/obj.data')
-if not os.path.exists(home_dir + '/darknet/obj43.data'):
-    shutil.copyfile(repo_folder + '/darknet/obj43.data', home_dir + '/darknet/obj43.data')
-```
 * The saved weights which are loaded for more training or detection are the weights included in the repository. If you wish to use the weights you trained, change the following line to the location of your saved weights. weights_43 is if you trained your model on 43 classes and weights_4 for 4 classes.
 ```
 weights_4 = repo_folder + '/yolov3_custom_train_v2_best.weights'
 weights_43 = repo_folder + '/yolov3_custom_train_v1_best.weights'
 ```
-* Now all you have to do is run the notebook.
 
 ## Predictions
 To detect traffic signs in images execute this block of code.
@@ -53,6 +47,8 @@ imShow('predictions.jpg')
 In place of the $weights variable, you can substitute the path of the weights trained by you.
 
 If you wish to generate predictions on images not included in the dataset, use the upload method defined to upload images to Google Colab and substitute the path of the image here.
+
+#### Now all you have to do is run the notebook!
 
 ### Credits
 The model is based on the repository by [AlexeyAB](https://github.com/AlexeyAB/darknet).
